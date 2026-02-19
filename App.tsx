@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { GoogleGenAI, Modality } from "@google/genai";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 // JSDelivr CDN - GitHub fayllari uchun eng ishonchli va CORS ruxsati ochiq bo'lgan tarmoq
 const GUITAR_SAMPLE_URL = "https://cdn.jsdelivr.net/gh/gleitz/midi-js-soundfonts@gh-pages/FatBoy/acoustic_guitar_nylon-mp3/E2.mp3"; 
@@ -258,6 +260,8 @@ export default function App() {
   if (!isStarted) {
     return (
       <>
+        <Analytics />
+        <SpeedInsights />
         <div id="container-48d438ea1e23fdf8fa9472782463213f"></div>
         <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center p-6 text-white overflow-hidden relative">
         <ConsoleUI />
@@ -307,13 +311,15 @@ export default function App() {
             ))}
           </div>
         </div>
-        </div>
-      </>
-    );
+      </div>
+    </>
+  );
   }
 
   return (
     <div className="min-h-screen bg-[#050505] flex flex-col font-sans text-white overflow-hidden relative">
+      <Analytics />
+      <SpeedInsights />
       <ConsoleUI />
       <header className="px-12 py-10 flex justify-between items-center z-20">
         <div className="flex items-center space-x-6">
