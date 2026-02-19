@@ -2,8 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -12,9 +12,9 @@ if (!rootElement) {
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
-  <Analytics />
-  <SpeedInsights />
   <React.StrictMode>
+    <Analytics />
+    <SpeedInsights />
     <App />
   </React.StrictMode>
 );

@@ -257,8 +257,9 @@ export default function App() {
 
   if (!isStarted) {
     return (
-      <div id="container-48d438ea1e23fdf8fa9472782463213f"></div>
-      <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center p-6 text-white overflow-hidden relative">
+      <>
+        <div id="container-48d438ea1e23fdf8fa9472782463213f"></div>
+        <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center p-6 text-white overflow-hidden relative">
         <ConsoleUI />
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <img src={GUITAR_BODY_URL} className="w-full h-full object-cover grayscale scale-110" alt="Background" />
@@ -306,7 +307,8 @@ export default function App() {
             ))}
           </div>
         </div>
-      </div>
+        </div>
+      </>
     );
   }
 
